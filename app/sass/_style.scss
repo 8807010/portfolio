@@ -1,0 +1,44 @@
+.header {
+  &__wrap {
+    background-image: url(./../img/header-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+  }
+
+  &__information {
+    text-align: center;
+    color: #ffffff;
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 56px;
+    line-height: 130%;
+    margin-bottom: 25px;
+  }
+
+  &__description {
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    max-width: 500px;
+  }
+
+  &__img {
+    cursor: pointer;
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    padding: 10px;
+    display: flex;
+  }
+}
