@@ -1,0 +1,76 @@
+.footer {
+  background-color: #1e4776;
+  color: #ffffff;
+  padding-top: 45px;
+  padding-bottom: 108px;
+
+  &__wrap {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__info {
+    color: #7e9ec9;
+    line-height: 1.3;
+    flex-grow: 1;
+    max-width: 350px;
+
+    &-name {
+      font-weight: 700;
+      font-size: 28px;
+      margin-bottom: 15px;
+      margin-top: -10px;
+    }
+
+    &-profession {
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+  }
+
+  &__socials {
+    flex-grow: 1;
+    max-width: 350px;
+
+    &-desc {
+      font-weight: 600;
+      line-height: 1.3;
+      margin-bottom: 15px;
+    }
+
+    &-list {
+      display: flex;
+    }
+
+    &-item {
+      list-style-type: none;
+
+      &:not(:last-child) {
+        margin-right: 30px;
+      }
+    }
+  }
+
+  &__kontakt {
+    max-width: 350px;
+    flex-grow: 1;
+
+    &-btn {
+      font-weight: 600;
+      line-height: 1.3;
+      text-transform: uppercase;
+      color: #ffffff;
+      margin-bottom: 16px;
+      display: inline-block;
+      border: 3px solid #ffffff;
+      border-radius: 50px;
+      padding: 15px 30px;
+    }
+
+    &-desc {
+      font-weight: 400;
+      line-height: 1.3;
+      color: #7e9ec9;
+    }
+  }
+}
