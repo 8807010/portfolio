@@ -60,10 +60,20 @@
       }
     }
 
-    &-img {
-      display: block;
-      width: 100%;
+    &-bg {
       margin-bottom: 20px;
+      overflow: hidden;
+position: relative;
+    padding-bottom: 80%;
+    }
+
+    &-img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
     }
 
     &-title {

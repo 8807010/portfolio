@@ -30,6 +30,7 @@ html,
 body {
   height: 100%;
   line-height: 1;
+  scroll-behavior: smooth; //для плавной прокрутки по стрелке вниз. задается тегу html
 }
 
 input,
