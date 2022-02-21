@@ -68,9 +68,14 @@
 
     &-item {
       list-style-type: none;
+      transition: all 0.3s ease;
 
       &:not(:last-child) {
         margin-right: 30px;
+      }
+
+      &:hover {
+        transform: scale(1.2);
       }
     }
   }
