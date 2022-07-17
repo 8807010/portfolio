@@ -1,10 +1,14 @@
-@import "_fonts";
-@import "_libs";
+// базовые подключения
 @import "_vars";
+@import "_mixins";
+@import "_fonts";
+@import "_settings";
+
+@import "_libs";
 @import "_index";
-@import "_header";
+@import "components/_header";
 @import "_works";
-@import "_footer";
+@import "components/_footer";
 @import "_eda";
 
 @import "_media"; // Всегда в конце
