@@ -22,6 +22,7 @@
     "browser-sync": "^2.26.14",
     "del": "^6.0.0",
     "editorconfig-checker": "^4.0.1",
+    "gh-pages": "^4.0.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
     "gulp-avif": "^1.0.1",
@@ -58,6 +59,7 @@
   "dependencies": {
     "@popperjs/core": "^2.11.2",
     "aos": "^2.3.4",
+    "gh-pages-deploy": "^0.5.1",
     "graph-modal": "^1.0.4",
     "graph-tabs": "^1.0.0",
     "inputmask": "^5.0.7",
