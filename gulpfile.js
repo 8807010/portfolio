@@ -275,8 +275,8 @@ const watchFiles = () => {
 
 const cache = () => {
   return src(`${buildFolder}/**/*.{css,js,svg,png,jpg,jpeg,webp,avif,woff2}`, {
-      base: buildFolder
-    })
+    base: buildFolder
+  })
     .pipe(rev())
     .pipe(revDel())
     .pipe(dest(buildFolder))
@@ -333,3 +333,13 @@ exports.build = series(toProd, clean, htmlInclude, scripts, styles, resources, i
 exports.cache = series(cache, rewrite);
 
 exports.zip = zipFiles;
+
+
+// gulp deploy
+const gulp = require('gulp');
+const ghPages = require('gulp-gh-pages');
+
+gulp.task('deploy', function () {
+  return gulp.src('./dist/**/*')
+    .pipe(ghPages());
+});
