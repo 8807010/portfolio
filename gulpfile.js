@@ -337,12 +337,9 @@ exports.zip = zipFiles;
 
 
 const gulp = require('gulp');
-const deploy = require('gulp-gh-pages');
+const ghPages = require('gulp-gh-pages');
 
-/**
- * Push build to gh-pages
- */
-gulp.task('deploy', function () {
-  return gulp.src("./dist/**/*")
-    .pipe(deploy())
+gulp.task('deploy', function() {
+  return gulp.src('./app/**/*')
+    .pipe(ghPages());
 });
