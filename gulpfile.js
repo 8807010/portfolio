@@ -324,12 +324,6 @@ const toProd = (done) => {
   done();
 };
 
-const gulp = require('gulp');
-const ghPages = require('gulp-gh-pages');
-
-gulp.task('deploy', () => gulp.src('./dist/**/*').pipe(ghPages()));
-
-
 exports.default = series(clean, htmlInclude, scripts, styles, resources, images, webpImages, avifImages, svgSprites, watchFiles);
 
 exports.backend = series(clean, htmlInclude, scriptsBackend, stylesBackend, resources, images, webpImages, avifImages, svgSprites)
@@ -339,3 +333,12 @@ exports.build = series(toProd, clean, htmlInclude, scripts, styles, resources, i
 exports.cache = series(cache, rewrite);
 
 exports.zip = zipFiles;
+
+
+const gulp = require('gulp');
+const ghPages = require('gulp-gh-pages');
+
+gulp.task('deploy', function() {
+  return gulp.src('./app/**/*')
+    .pipe(ghPages());
+});
