@@ -34,6 +34,7 @@ const plumber = require('gulp-plumber');
 const path = require('path');
 const zip = require('gulp-zip');
 const rootFolder = path.basename(path.resolve());
+const ghPages = require('gh-pages');
 
 // paths
 const srcFolder = './src';
@@ -130,6 +131,12 @@ const stylesBackend = () => {
     .pipe(dest(paths.buildCssFolder))
     .pipe(browserSync.stream());
 };
+
+// deploy
+function deploy(cb) {
+  ghPages.publish(path.join(process.cwd(), './build'), cb);
+}
+exports.deploy = deploy;
 
 // scripts
 const scripts = () => {
@@ -333,12 +340,3 @@ exports.build = series(toProd, clean, htmlInclude, scripts, styles, resources, i
 exports.cache = series(cache, rewrite);
 
 exports.zip = zipFiles;
-
-
-const gulp = require('gulp');
-const ghPages = require('gulp-gh-pages');
-
-gulp.task('deploy', function() {
-  return gulp.src('./build/**/*')
-    .pipe(ghPages());
-});
