@@ -134,7 +134,7 @@ const stylesBackend = () => {
 
 // deploy
 function deploy(cb) {
-  ghPages.publish(path.join(process.cwd(), './build'), cb);
+  ghPages.publish(path.join(process.cwd(), './app'), cb);
 }
 exports.deploy = deploy;
 
