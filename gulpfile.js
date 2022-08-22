@@ -55,7 +55,7 @@ let isProd = false; // dev by default
 
 const clean = () => {
   return del([buildFolder])
-}
+};
 
 //svg sprite
 const svgSprites = () => {
@@ -88,7 +88,16 @@ const svgSprites = () => {
       },
     }))
     .pipe(dest(paths.buildImgFolder));
-}
+};
+
+// deploy
+const gulp = require('gulp');
+const ghPages = require('gulp-gh-pages');
+
+gulp.task('deploy', function() {
+  return gulp.src('./app/**/*')
+    .pipe(ghPages());
+});
 
 // scss styles
 const styles = () => {
@@ -169,7 +178,7 @@ const scripts = () => {
     })
     .pipe(dest(paths.buildJsFolder))
     .pipe(browserSync.stream());
-}
+};
 
 // scripts backend
 const scriptsBackend = () => {
@@ -209,12 +218,12 @@ const scriptsBackend = () => {
     })
     .pipe(dest(paths.buildJsFolder))
     .pipe(browserSync.stream());
-}
+};
 
 const resources = () => {
   return src(`${paths.resourcesFolder}/**`)
     .pipe(dest(buildFolder))
-}
+};
 
 const images = () => {
   return src([`${paths.srcImgFolder}/**/**.{jpg,jpeg,png,svg}`])
@@ -253,7 +262,7 @@ const htmlInclude = () => {
     }))
     .pipe(dest(buildFolder))
     .pipe(browserSync.stream());
-}
+};
 
 const watchFiles = () => {
   browserSync.init({
@@ -271,7 +280,7 @@ const watchFiles = () => {
   watch(`${paths.srcImgFolder}/**/**.{jpg,jpeg,png}`, webpImages);
   watch(`${paths.srcImgFolder}/**/**.{jpg,jpeg,png}`, avifImages);
   watch(paths.srcSvg, svgSprites);
-}
+};
 
 const cache = () => {
   return src(`${buildFolder}/**/*.{css,js,svg,png,jpg,jpeg,webp,avif,woff2}`, {
@@ -296,7 +305,7 @@ const rewrite = () => {
       manifest
     }))
     .pipe(dest(buildFolder));
-}
+};
 
 const htmlMinify = () => {
   return src(`${buildFolder}/**/*.html`)
@@ -304,7 +313,7 @@ const htmlMinify = () => {
       collapseWhitespace: true
     }))
     .pipe(dest(buildFolder));
-}
+};
 
 const zipFiles = (done) => {
   del.sync([`${buildFolder}/*.zip`]);
@@ -317,7 +326,7 @@ const zipFiles = (done) => {
     ))
     .pipe(zip(`${rootFolder}.zip`))
     .pipe(dest(buildFolder));
-}
+};
 
 const toProd = (done) => {
   isProd = true;
@@ -333,13 +342,3 @@ exports.build = series(toProd, clean, htmlInclude, scripts, styles, resources, i
 exports.cache = series(cache, rewrite);
 
 exports.zip = zipFiles;
-
-
-
-const gulp = require('gulp');
-const ghPages = require('gulp-gh-pages');
-
-gulp.task('deploy', function() {
-  return gulp.src('./app/**/*')
-    .pipe(ghPages());
-});
