@@ -1,5 +1,5 @@
 .works {
-padding: 80px 0;
+  padding: 80px 0;
 
   @media (max-width: 850px) {
     padding-top: 20px;
@@ -23,7 +23,6 @@ padding: 80px 0;
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
-    margin-bottom: 80px;
 
     @media (max-width: 850px) {
       gap: 15px;
@@ -96,11 +95,19 @@ padding: 80px 0;
         font-size: 14px;
       }
     }
+
+    &:nth-child(n + 7) {
+      display: none;
+    }
+
+    &.is-visible {
+      display: block;
+    }
   }
 
   &__btn {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center
   }
 }
