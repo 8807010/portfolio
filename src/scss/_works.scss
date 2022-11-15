@@ -1,6 +1,5 @@
 .works {
-  padding-top: 85px;
-  padding-bottom: 115px;
+padding: 80px 0;
 
   @media (max-width: 850px) {
     padding-top: 20px;
@@ -24,6 +23,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
+    margin-bottom: 80px;
 
     @media (max-width: 850px) {
       gap: 15px;
@@ -96,5 +96,11 @@
         font-size: 14px;
       }
     }
+  }
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
