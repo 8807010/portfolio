@@ -58,7 +58,7 @@ a {
   appearance: none;
   border: none;
   border-radius: 0;
-  background-color: #fff;
+  background-color: #ffffff;
 
   &::-webkit-search-decoration,
   &::-webkit-search-cancel-button,
@@ -126,7 +126,7 @@ a {
     background-color: #ffffff;
     color: #1e4776;
     transition: all 0.2s ease-in;
-    margin-top: rem(80);
+    margin-top: 80px;
 
     @media (max-width: 850px) {
       margin-top: 40px;
