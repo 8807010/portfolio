@@ -4,14 +4,14 @@
   "description": "my portfolio for client",
   "main": "gulpfile.js",
   "scripts": {
+    "deploy": "gulp build && gh-pages -d build",
     "html": "node-w3c-validator -f lint -evH -i app/**/*.html",
     "dev": "gulp",
     "build": "gulp build",
     "cache": "gulp cache",
     "backend": "gulp backend",
     "zip": "gulp zip",
-    "code": "editorconfig-checker",
-    "deploy": "gulp build && gh-pages -d build"
+    "code": "editorconfig-checker"
   },
   "author": "Sokolov",
   "license": "ISC",
