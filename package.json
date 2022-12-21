@@ -1,7 +1,7 @@
 {
-  "name": "gulp-builder",
+  "name": "portfolio",
   "version": "2.0.4",
-  "description": "gulp-builder for weblayout",
+  "description": "my portfolio for client",
   "main": "gulpfile.js",
   "scripts": {
     "html": "node-w3c-validator -f lint -evH -i app/**/*.html",
@@ -13,7 +13,7 @@
     "code": "editorconfig-checker",
     "deploy": "gulp build && gh-pages -d build"
   },
-  "author": "MaxGraph",
+  "author": "Sokolov",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.16.7",
